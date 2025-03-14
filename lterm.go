@@ -21,9 +21,20 @@ func init() {
 	} else {
 		noColor = true
 	}
+
+	if noColor {
+		// reset all pseudo consts
+		Reset = ""
+		Bold = ""
+		Disable = ""
+		Underline = ""
+		Reverse = ""
+		Strikethrough = ""
+		Invisible = ""
+	}
 }
 
-const (
+var (
 	Reset         = "\033[0m"
 	Bold          = "\033[01m"
 	Disable       = "\033[02m"
