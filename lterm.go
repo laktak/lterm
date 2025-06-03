@@ -91,3 +91,11 @@ func GetWidth() int {
 	}
 	return 80
 }
+
+func GetUseTerminal() bool {
+	return isTerm
+}
+
+func GetUseColor() bool {
+	return !noColor
+}
