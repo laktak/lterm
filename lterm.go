@@ -63,6 +63,13 @@ func Fg4(col int) string {
 	return fmt.Sprintf("\033[%dm", 90-8+col)
 }
 
+func Bg4(col int) string {
+	if noColor {
+		return ""
+	}
+	return fmt.Sprintf("\033[%dm", 40+col)
+}
+
 func Fg8(col int) string {
 	if noColor {
 		return ""
