@@ -3,6 +3,7 @@ package lterm
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"golang.org/x/term"
 )
@@ -101,6 +102,21 @@ func GetWidth() int {
 
 func GetUseTerminal() bool {
 	return isTerm
+}
+
+func GetTermColorBits() int {
+	if noColor {
+		return 1
+	}
+	colorterm := os.Getenv("COLORTERM")
+	termEnv := os.Getenv("TERM")
+	if colorterm == "truecolor" || colorterm == "24bit" {
+		return 24
+	}
+	if colorterm == "8bit" || strings.Contains(termEnv, "256") {
+		return 8
+	}
+	return 4
 }
 
 func GetUseColor() bool {
