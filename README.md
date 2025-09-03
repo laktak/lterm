@@ -1,6 +1,8 @@
 
 # lterm
 
+{ repos & mirrors: [github.com/laktak/lterm](https://github.com/laktak/lterm/), [codeberg.org/laktak/lterm](https://codeberg.org/laktak/lterm) }
+
 lterm is a basic terminal color package for go.
 
 ## Example
